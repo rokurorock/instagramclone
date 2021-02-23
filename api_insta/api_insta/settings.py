@@ -81,7 +81,8 @@ WSGI_APPLICATION = 'api_insta.wsgi.application'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',  # ログインしているユーザーだけViewを見せるようにする
+        # ログインしているユーザーだけViewを見せるようにする(SIMPLE_JWTの認証方式でログインユーザーか違うかを認識する)
+        'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [  # 認証の方法
         'rest_framework_simplejwt.authentication.JWTAuthentication',
