@@ -199,9 +199,9 @@ export const authSlice = createSlice({
     editNickname,
   } = authSlice.actions;
   
-  //Reactのコンポーネントからstateを呼び出せるようにする設定 useSelector(RTK)
+  //Reactのコンポーネントからstateを呼び出せるようにする設定 useSelector(RTK)で利用できるようにする
   export const selectIsLoadingAuth = (state: RootState) =>
-    state.auth.isLoadingAuth;
+    state.auth.isLoadingAuth;//ここの　authは store.tsのなかで指定した名前 isLoadingAuthはstateのパラメーター
   export const selectOpenSignIn = (state: RootState) => state.auth.openSignIn;
   export const selectOpenSignUp = (state: RootState) => state.auth.openSignUp;
   export const selectOpenProfile = (state: RootState) => state.auth.openProfile;
